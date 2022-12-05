@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import HomeContainer from './components/HomeContainer/HomeContainer'
+import Navbar from './components/NavBar/NavBar'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-//import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,6 +11,7 @@ function App() {
   let saludar = () => alert ('Bienvenido a nuestra web')
   return (
     <div>
+      <Navbar />
       <HomeContainer saludo={saludo} saludar={saludar} />
       
     </div>
