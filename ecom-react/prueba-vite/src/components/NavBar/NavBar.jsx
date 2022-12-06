@@ -1,12 +1,15 @@
 import React from 'react'
 import { Container, Nav, Navbar, NavDropdown} from 'react-bootstrap'
+import Logo from '../../assets/naturepharma.jpg'
+import './NavBar.css'
 
 const NavBar = () => {
   return (
     
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
     <Container>
-      <Navbar.Brand href="#home">NaturePharma</Navbar.Brand>
+      <img className="logo"src={Logo} alt='imagen'/>
+      <Navbar.Brand href="#home">Home</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
@@ -25,9 +28,9 @@ const NavBar = () => {
           </NavDropdown>
         </Nav>
         <Nav>
-          <Nav.Link href="#deets">🛒</Nav.Link>
+          
           <Nav.Link eventKey={2} href="#memes">
-            Carrito
+            Carrito 🛒
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
