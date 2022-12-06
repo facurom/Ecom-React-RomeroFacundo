@@ -5,7 +5,7 @@ const HomeContainer = ({saludo, saludar}) => {
   return (
     <div>
         <h2>{saludo}</h2>
-        <Titulo titulo={'titulo de Home'} subtitulo={'subtitulo de Home'}/>
+        <Titulo titulo={'Preparados magistrales'} subtitulo={'Linea 100% organica de maquillaje'}/>
         <Formulario/>
         <button onClick={saludar}>Presione aqui</button>
     </div>

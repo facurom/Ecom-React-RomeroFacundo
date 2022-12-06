@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [count, setCount] = useState(0)
-  let saludo = 'Hola, soy HomeContainer'
+  let saludo = 'NaturePharma Home'
   let saludar = () => alert ('Bienvenido a nuestra web')
   return (
     <div>
