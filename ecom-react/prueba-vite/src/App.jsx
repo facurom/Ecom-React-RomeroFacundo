@@ -12,7 +12,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <HomeContainer saludo={saludo} saludar={saludar} />
+      <HomeContainer saludo={saludo}saludar={saludar} />
       
     </div>
   )
