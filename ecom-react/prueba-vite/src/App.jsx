@@ -27,7 +27,7 @@ function App() {
           <Route path="/detail/:productoId" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<CartContainer />} />
 
-          <Route path="*" element={<Navigate to="/" />} />
+          {/*<Route path="*" element={<Navigate to="/" />} />*/}
         </Routes>
       </BrowserRouter>
     </div>

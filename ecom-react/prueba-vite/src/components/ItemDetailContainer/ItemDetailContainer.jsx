@@ -1,5 +1,5 @@
 import React from "react";
-import { ItemDetail } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
   const { productoId } = useParams();
