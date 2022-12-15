@@ -14,13 +14,16 @@ const ItemCount = () => {
   return (
     <center>
       {contador}
-      <h2></h2>
+      
       <button className="btn btn-outline-primary" onClick={handleCount}>
         +
       </button>
-      <br></br>
-      {/*<button className="btn btn-outline-primary" onClick={handleBool}>Ejecutar Booleano</button> */}
+      
+      <button className="btn btn-outline-primary" onClick={handleCount}>-</button>
+      <button className="btn btn-outline-primary" onClick={handleCount}>Agregar al carrito</button>
+      <br></br> 
     </center>
+    
   );
 };
 const ItemListContainer = ({ saludo }) => {

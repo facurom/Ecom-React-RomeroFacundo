@@ -4,7 +4,7 @@ import Navbar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/NavBar/NavBar";
-import { BrowserRouter,Route, Routes } from "react-router-dom";
+import { BrowserRouter,Navigate,Route, Routes } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import CartContainer from "./components/CartContainer/CartContainer";
 <components />;
@@ -26,8 +26,10 @@ function App() {
 
           <Route path="/detail/:productoId" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<CartContainer />} />
-
-          {/*<Route path="*" element={<Navigate to="/" />} />*/}
+          {/*<Route path="/notpage" element={<Component404NotFound />} /> */}
+          
+          
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
     </div>

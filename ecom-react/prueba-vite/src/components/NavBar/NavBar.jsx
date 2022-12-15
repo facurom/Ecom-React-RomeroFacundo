@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Nav, Navbar, NavDropdown} from 'react-bootstrap'
+import { Link, NavLink } from 'react-router-dom'
 import Logo from '../../assets/naturepharma.jpg'
 import './NavBar.css'
 
@@ -9,12 +10,12 @@ const NavBar = () => {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
     <Container>
       <img className="logo"src={Logo} alt='imagen'/>
-      <Navbar.Brand href="#home">Home</Navbar.Brand>
+      <NavLink className={ ( {isActive} )=> isActive ? 'btn btn-success' : 'btn btn-outline-success'} to='/node_modules'>Home</NavLink>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="#features">Zoa organic</Nav.Link>
-          <Nav.Link href="#pricing">Sucursales</Nav.Link>
+          <Nav.Link className={ ( {isActive} )=> isActive ? 'btn btn-success' : 'btn btn-outline-success'} to='/categoria/makeup'>Zoa organic</Nav.Link>
+          <Nav.Link className={ ( {isActive} )=> isActive ? 'btn btn-success' : 'btn btn-outline-success'} to='/categoria/cremasfaciales'>Cremas Faciales</Nav.Link>
           <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">
@@ -29,9 +30,9 @@ const NavBar = () => {
         </Nav>
         <Nav>
           
-          <Nav.Link eventKey={2} href="#memes">
+          <Link to='/cart'>
             Carrito 🛒
-          </Nav.Link>
+          </Link>
         </Nav>
       </Navbar.Collapse>
     </Container>
