@@ -18,14 +18,14 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/" element={<ItemListContainer saludo={saludo} />} />
+          <Route path='/' element={<ItemListContainer saludo={saludo} />} />
           <Route
-            path="/categoria/:categoriaId"
+            path='/categoria/:categoriaId'
             element={<ItemListContainer saludo={saludo} />}
           />
 
-          <Route path="/detail/:productoId" element={<ItemDetailContainer />} />
-          <Route path="/cart" element={<CartContainer />} />
+          <Route path='/detail/:productoId' element={<ItemDetailContainer />} />
+          <Route path='/cart' element={<CartContainer />} />
           {/*<Route path="/notpage" element={<Component404NotFound />} /> */}
           
           

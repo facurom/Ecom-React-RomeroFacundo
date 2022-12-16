@@ -1,40 +1,34 @@
 import { useEffect, useState } from "react";
 import { gFetch } from "../../helpers/gFetch";
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import Formulario from "../Formulario/formulario";
 import Titulo from "../Titulo/Titulo";
+import { ItemCount } from "../ItemCount/ItemCount";
 
-const ItemCount = () => {
-  const [contador, setearContador] = useState(0);
-  const [booleano, setBooleano] = useState(true);
-  const handleCount = () => {
-    setearContador(contador + 1);
-  };
-  const handleBool = () => setBooleano(!booleano);
-  return (
-    <center>
-      {contador}
-      
-      <button className="btn btn-outline-primary" onClick={handleCount}>
-        +
-      </button>
-      
-      <button className="btn btn-outline-primary" onClick={handleCount}>-</button>
-      <button className="btn btn-outline-primary" onClick={handleCount}>Agregar al carrito</button>
-      <br></br> 
-    </center>
-    
-  );
-};
+
 const ItemListContainer = ({ saludo }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const {categoriaId} = useParams()
   useEffect(() => {
-    gFetch()
+
+    if (categoriaId) {
+      gFetch()
+      .then((resp) => setProducts(resp.filter(product => product.categoria === categoriaId)))
+      .catch((err) => console.log(err))
+      .finally(() => setLoading(false));
+      
+    } else {
+      gFetch()
       .then((resp) => setProducts(resp))
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
-  }, []);
+      
+    }
+   
+  }, [categoriaId]);
+
+  console.log(categoriaId)
 
   return (
     <>

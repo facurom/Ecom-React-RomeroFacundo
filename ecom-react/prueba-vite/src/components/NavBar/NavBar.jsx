@@ -14,8 +14,8 @@ const NavBar = () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link className={ ( {isActive} )=> isActive ? 'btn btn-success' : 'btn btn-outline-success'} to='/categoria/makeup'>Zoa organic</Nav.Link>
-          <Nav.Link className={ ( {isActive} )=> isActive ? 'btn btn-success' : 'btn btn-outline-success'} to='/categoria/cremasfaciales'>Cremas Faciales</Nav.Link>
+          <NavLink className={ ( {isActive} )=> isActive ? 'btn btn-success' : 'btn btn-outline-success'} to="/categoria/makeup">Zoa organic</NavLink>
+          <NavLink className={ ( {isActive} )=> isActive ? 'btn btn-success' : 'btn btn-outline-success'} to="/categoria/cremasfaciales">Cremas Faciales</NavLink>
           <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">
