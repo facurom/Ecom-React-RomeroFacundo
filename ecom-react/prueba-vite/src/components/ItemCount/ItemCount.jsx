@@ -1,14 +1,18 @@
 import { useState } from "react";
 
-export const ItemCount = () => {
+export const ItemCount = ( { stock = 5 } ) => {
     const [contador, setearContador] = useState(0);
     const [booleano, setBooleano] = useState(true);
     const handleCount = () => {
-      setearContador(contador + 1);
+      console.log(contador)
+      if (count < stock){
+        
+        setearContador(contador + 1)
+      }
     };
     const handleBool = () => setBooleano(!booleano);
     return (
-      <center>
+      <center className="mt-5">
         {contador}
         
         <button className="btn btn-outline-primary" onClick={handleCount}>

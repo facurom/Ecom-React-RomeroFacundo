@@ -4,6 +4,7 @@ import {Link, useParams} from 'react-router-dom';
 import Formulario from "../Formulario/formulario";
 import Titulo from "../Titulo/Titulo";
 import { ItemCount } from "../ItemCount/ItemCount";
+import ItemList from "../ItemList/ItemList";
 
 
 const ItemListContainer = ({ saludo }) => {
@@ -38,11 +39,12 @@ const ItemListContainer = ({ saludo }) => {
         subtitulo={"Linea 100% organica de maquillaje"}
       />
       <Formulario />
-      <ItemCount />
+      
+      <ItemList products={products}/>
 
       {loading ? (
         <h2>Cargando productos ...</h2>
-      ) : (
+      ) :  (
         <div
           style={{
             display: "flex",
@@ -50,35 +52,11 @@ const ItemListContainer = ({ saludo }) => {
             flexWrap: "wrap",
           }}
         >
-          {products.map((product) => (
-            <div
-              style={{ marginLeft: 100 }}
-              className="col-md-3"
-              key={product.id}
-            >
-              <Link to={`/detail/${product.id}`}>
-                <div className="card w-100 mt-5">
-                  <div className="card-header">
-                    {`${product.nombre} - ${product.categoria}`}
-                  </div>
-                  <div className="card-body">
-                    <img src={product.foto} alt="" className="w-50" />
-                    {product.price}
-                  </div>
-
-                  {
-                    <div className="card-footer">
-                      <button className="btn btn-outline-primary btn-block">
-                        detalle del producto
-                      </button>
-                    </div>
-                  }
-                </div>
-              </Link>
-            </div>
-          ))}
+          
         </div>
+        
       )}
+      <ItemCount />
     </>
   );
 };
