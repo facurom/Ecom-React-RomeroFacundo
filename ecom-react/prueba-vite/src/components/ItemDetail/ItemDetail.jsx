@@ -1,7 +1,8 @@
-import React from 'react'
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
 import { ItemCount } from '../ItemCount/ItemCount'
 
 const ItemDetail = () => {
+  const onAdd= (cantidad) => console.log('Cantidad de productos seleccionados',cantidad)
   return (
     
     <div className="row">
@@ -9,7 +10,12 @@ const ItemDetail = () => {
         ItemDetail
       </div>
       <div className='col'>
-         <ItemCount stock={10}/>
+         <ItemCount 
+         stock={10}
+         initial={1}
+         onAdd={onAdd}
+         />
+         
       </div>
     </div>
   )

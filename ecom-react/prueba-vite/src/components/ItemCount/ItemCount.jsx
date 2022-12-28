@@ -1,16 +1,17 @@
 import { useState } from "react";
 
-export const ItemCount = ( { stock = 5 } ) => {
-    const [contador, setearContador] = useState(0);
+export const ItemCount = ( { stock = 5, initial=1 ,onAdd } ) => {
+    const [contador, setearContador] = useState(initial);
     const [booleano, setBooleano] = useState(true);
     const handleCount = () => {
       console.log(contador)
-      if (count < stock){
+      if (contador < stock){
         
         setearContador(contador + 1)
       }
     };
-    const handleBool = () => setBooleano(!booleano);
+    const restar = () => {if(contador> initial) setearContador(contador -1)}
+    const handleOnAdd = () => onAdd(contador)
     return (
       <center className="mt-5">
         {contador}
@@ -19,8 +20,8 @@ export const ItemCount = ( { stock = 5 } ) => {
           +
         </button>
         
-        <button className="btn btn-outline-primary" onClick={handleCount}>-</button>
-        <button className="btn btn-outline-primary" onClick={handleCount}>Agregar al carrito</button>
+        <button className="btn btn-outline-primary" onClick={restar}>-</button>
+        <button className="btn btn-outline-primary" onClick={handleOnAdd}>Agregar al carrito</button>
         <br></br> 
       </center>
       
