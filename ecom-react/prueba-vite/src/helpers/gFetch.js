@@ -6,9 +6,9 @@ let productos = [
 
 
 export const gFetch = (id) => {
-    return new Promise((aceptado, rechazado)=>{
+    return new Promise((resolve, reject)=>{
       setTimeout(()=>{
-        aceptado(id ? productos.find (prod => prod.id ===id) : productos)
+        resolve(id ? productos.find (producto => producto.id ===id) : productos)
       }, 1000 ) 
     })
 }
