@@ -40,7 +40,7 @@ const ItemListContainer = ({ saludo }) => {
       />
       <Formulario />
       
-      <ItemList products={products}/>
+      
 
       {loading ? (
         <h2>Cargando productos ...</h2>
@@ -52,11 +52,12 @@ const ItemListContainer = ({ saludo }) => {
             flexWrap: "wrap",
           }}
         >
-          
+          <ItemList products={products}/>
         </div>
         
+        
       )}
-      <ItemCount />
+      
     </>
   );
 };

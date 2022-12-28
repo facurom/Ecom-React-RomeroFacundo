@@ -1,7 +1,7 @@
 
 import { ItemCount } from '../ItemCount/ItemCount'
 
-const ItemDetail = () => {
+const ItemDetail = ({product}) => {
   const onAdd= (cantidad) => console.log('Cantidad de productos seleccionados',cantidad)
   return (
     
