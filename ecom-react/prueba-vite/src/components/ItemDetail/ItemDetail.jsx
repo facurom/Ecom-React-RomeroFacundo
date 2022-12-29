@@ -7,7 +7,7 @@ const ItemDetail = ({product}) => {
     
     <div className="row">
       <div className="border border-5 border-success w-50">
-        <h2>{product.name}</h2>
+        <h2>{product.nombre}</h2>
         <img src={product.foto} className=''w-25 alt='imagen del producto'/>
         <h4>{product.categoria}</h4>
         <h4>{product.price}</h4>
