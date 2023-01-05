@@ -1,12 +1,20 @@
 import { ItemCount } from "../ItemCount/ItemCount";
-import { Link } from 'react-router-dom';
+import { Link, UNSAFE_DataStaticRouterContext } from 'react-router-dom';
 import { useState } from 'react'
+import { useCartContext } from "../../assets/context/CartContext";
+
 
 const ItemDetail = ({ product }) => {
+  const {addtoCart, cartList} = useCartContext()
+  
+  
   const [compra, setCompra]= useState(false)
   const onAdd = (cantidad) =>{
-    console.log("Cantidad de productos seleccionados", cantidad);
-    setCompra(true)}
+    alert(`Cantidad de productos seleccionados: ${cantidad}`)
+    addtoCart( {...product, cantidad} )
+    setCompra(true)
+  }
+  console.log(cartList)
   return (
     <div className="row">
       <div className="border border-5 border-success w-50">
