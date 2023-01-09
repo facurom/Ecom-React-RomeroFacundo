@@ -12,10 +12,17 @@ export const CartContextProvider = ({children}) =>{
     
     
     const addtoCart = (product) => {
-        setCartList([
-            ...cartList,
-            product
-        ])
+        const idx = cartList.findIndex(product => product.id == product.id)
+        if (idx == -1) {
+            setCartList([
+                ...cartList,
+                product
+            ])
+        } else {
+            cartList[idx].cantidad += product.cantidad
+            setCartList( [ ...cartList ] )
+        }
+        
 
     }
 
@@ -24,6 +31,7 @@ export const CartContextProvider = ({children}) =>{
 
     const cantidadTotal = () => cartList.reduce((contador, product) => contador += product.cantidad , 0)
 
+    const eliminarItem = ( id ) => setCartList (cartList.filter(product => product.id !== id ))
 
 
 
@@ -32,7 +40,10 @@ export const CartContextProvider = ({children}) =>{
             cartList, 
             addtoCart,
             vaciarCarrito,
-            cantidadTotal
+            cantidadTotal,
+            cantidadTotal,
+            precioTotal,
+            eliminarItem
         }}>
             {children}
         </CartContext.Provider>
