@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Nav, Navbar, NavDropdown} from 'react-bootstrap'
 import { Link, NavLink } from 'react-router-dom'
 import Logo from '../../assets/naturepharma.jpg'
+import CartWidget from '../CartWidget/CartWidget'
 import './NavBar.css'
 
 const NavBar = () => {
@@ -31,7 +32,8 @@ const NavBar = () => {
         <Nav>
           
           <Link to='/cart'>
-            Carrito 🛒
+            
+            <CartWidget/>
           </Link>
         </Nav>
       </Navbar.Collapse>
