@@ -16,10 +16,7 @@ const CartContainer = () => {
           > <i class="bi bi-x-circle"></i></button>
         </li>
       ))}
-      { precioTotal() > 0 && <label>El precio total es: { precioTotal()}</label>}<br/>
-      <button className="btn btn-outline-danger" onClick={vaciarCarrito}>
-        Vaciar Carrito
-      </button>
+      
     </div>
   );
 };
