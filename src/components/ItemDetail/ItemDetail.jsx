@@ -27,7 +27,7 @@ const ItemDetail = ({ product }) => {
         {compra ? (
           <div>
             <Link className="btn btn-outline-primary " to="/">
-              Seguir Comprando
+              Seguir Comprandoo
             </Link>
             <Link className="btn btn-outline-primary " to="/cart">
               Ir al carrito
